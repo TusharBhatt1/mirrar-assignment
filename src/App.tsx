@@ -1,10 +1,11 @@
-import { useCallback,useState } from "react";
-import { AiOutlineSearch } from "react-icons/ai";
+import { useCallback, useState } from "react";
+
 import CurrentWeather, { WeatherData } from "./components/CurrentWeather";
 import { PiSpinner } from "react-icons/pi";
 import FiveDaysData from "./components/FiveDaysData";
 import Toggle from "./components/Toggle";
 import Intro from "./components/Intro";
+import Button from "./components/Button";
 
 interface ErrorType {
   code: string;
@@ -64,13 +65,7 @@ export default function App() {
             placeholder="Search"
             className="border border-black p-2 rounded-xl w-full "
           />
-          <button
-            disabled={isLoading}
-            onClick={makeSearch}
-            className="bg-white px-4 rounded-full hover:bg-blue-200"
-          >
-            <AiOutlineSearch />
-          </button>
+          <Button disabled={isLoading} onClick={makeSearch} />
         </div>
         <div className="flex relative  flex-col justify-center items-center mt-4 text-white">
           <span className="text-xs text-red-500">{error?.message}</span>
