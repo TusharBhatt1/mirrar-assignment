@@ -37,7 +37,7 @@ export default function App() {
 
         if (result.message) {
           setError(result);
-          throw Error;
+          return
         }
         setCity(query);
 

@@ -9,7 +9,7 @@ export default function Toggle({
   setCelsius: (value: boolean) => void;
 }) {
   return (
-    <button onClick={() => setCelsius(!celcius)}>
+    <button onClick={() => setCelsius(!celcius)} className="w-[70px] m-auto">
       {celcius ? (
         <div className="flex gap-2 justify-center items-center text-slate-50">
           <BiToggleLeft size={40} />
