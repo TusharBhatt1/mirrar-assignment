@@ -9,7 +9,7 @@ export default function Icon({iconType, isMain}:{iconType:string,isMain:boolean}
     const [image, setImage] = useState("");
     useEffect(() => {
       const icon = iconType
-      console.log(icon)
+   
       switch (icon) {
         case "02n":
         case "02d":

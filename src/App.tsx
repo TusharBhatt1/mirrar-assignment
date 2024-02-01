@@ -42,13 +42,12 @@ export default function App() {
         setCity(query);
 
         setCurrentData(result);
-        console.log(result);
         const response2 = await fetch(
           `https://api.openweathermap.org/data/2.5/forecast?q=${query}&units=Metric&appid=${apiKey}`
         );
         const result2 = await response2.json();
         setFiveDaysData(result2.list.slice(0, 5));
-        console.log(result2.list.slice(0, 5));
+       
       } catch (error: unknown) {
         setCurrentData(null);
         alert("Check Your Connection")
@@ -78,7 +77,7 @@ export default function App() {
             <AiOutlineSearch />
           </button>
         </div>
-        <div className="flex relative  md:flex-col justify-center items-center mt-4 text-white">
+        <div className="flex relative  flex-col justify-center items-center mt-4 text-white">
           <span className="text-xs text-red-500"> {error?.message}</span>
           
             <div className="h-3 bg-red-100 relative">
