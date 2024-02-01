@@ -3,8 +3,8 @@ import { AiOutlineSearch } from "react-icons/ai";
 import CurrentWeather, { WeatherData } from "./components/CurrentWeather";
 import { PiSpinner } from "react-icons/pi";
 import FiveDaysData from "./components/FiveDaysData";
-
 import Toggle from "./components/Toggle";
+import Intro from "./components/Intro";
 
 interface ErrorType {
   code: string;
@@ -12,7 +12,7 @@ interface ErrorType {
 }
 
 export default function App() {
-  const apiKey = "5ee58debfa7c03ee85f5b4db8cc637a3";
+  const apiKey = "5ee58debfa7c03ee85f5b4db8cc637a3"
   const [currentData, setCurrentData] = useState<WeatherData | null>();
   const [fiveDaysData, setFiveDaysData] = useState();
   const [celcius, setCelsius] = useState(true);
@@ -87,7 +87,7 @@ export default function App() {
               </p>}
             </div>
           
-          {currentData && (
+          {currentData ? (
             <div className="flex flex-col w-full">
               <CurrentWeather
                 city={city}
@@ -99,7 +99,7 @@ export default function App() {
                 <FiveDaysData data={fiveDaysData} isCelsius={celcius} />
               )}
             </div>
-          )}
+          ) :<Intro/>}
         </div>
       </div>
     </div>
