@@ -50,11 +50,11 @@ export default function CurrentWeather({
           </div>
 
           <p className="text-sm flex gap-4 text-slate-200">
-            <span className="flex items-center gap-2">
+            <span className="flex items-center">
               max :
               <Temperature temp={data.main.temp_max} isCelsius={isCelsius} />
             </span>
-            <span className="flex items-center gap-2">
+            <span className="flex items-center">
               min :
               <Temperature temp={data.main.temp_min} isCelsius={isCelsius} />
             </span>

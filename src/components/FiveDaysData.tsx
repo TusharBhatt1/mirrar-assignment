@@ -17,7 +17,7 @@ export default function FiveDaysData({ data, isCelsius }: FiveDaysDataProps) {
     data.reduce((acc, current) => acc + current.main.temp, 0) / data.length;
 
   return (
-    <div className="mt-4 flex flex-col gap-0 border border-slate-100 p-2 rounded-md w-full">
+    <div className="mt-4 flex flex-col items-center justify-center gap-0 border border-slate-100 p-2 rounded-md w-full">
       <div className="grid grid-cols-5 text-xs gap-4">
         {data.map((d, index) => (
           <div
@@ -35,11 +35,10 @@ export default function FiveDaysData({ data, isCelsius }: FiveDaysDataProps) {
           </div>
         ))}
 
-<p className="font-bold flex justify-center items-center w-[40vw] m-auto">
-  Avg&nbsp;: {" "}
-  <Temperature temp={averageTemp.toFixed()} isCelsius={isCelsius} />
-</p>
-
+        <p className="font-bold flex gap-1 justify-center items-center ml-12">
+          Average
+          <Temperature temp={averageTemp.toFixed()} isCelsius={isCelsius} />
+        </p>
       </div>
     </div>
   );

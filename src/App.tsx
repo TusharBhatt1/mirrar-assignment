@@ -23,8 +23,8 @@ export default function App() {
   const [error, setError] = useState<ErrorType | null>();
 
   const makeSearch = useCallback(
-    async (e: React.FormEvent) => {
-      e.preventDefault();
+    async () => {
+  
       if (query === "" || query === city) return;
 
       setError(null);
