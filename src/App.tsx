@@ -55,7 +55,7 @@ export default function App() {
 
   return (
     <div>
-      <div className="border border-red-100 w-full md:w-1/2 h-auto bg-black rounded-xl m-auto mt-4 p-4 text-white">
+      <div className="border border-red-100 w-full md:w-1/2 h-auto bg-blue-700 rounded-xl m-auto mt-4 p-4 text-white">
         <div className="flex gap-4 text-black p-2">
           <input
             value={query}
