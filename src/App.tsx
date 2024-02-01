@@ -55,7 +55,7 @@ export default function App() {
 
   return (
     <div>
-      <div className="border border-red-100 w-full md:w-1/2 h-auto bg-blue-700 rounded-xl m-auto mt-4 p-4 text-white">
+      <div className="border border-red-100 w-full md:w-1/2 h-auto bg-black rounded-xl m-auto mt-4 p-4 text-white">
         <div className="flex gap-4 text-black p-2">
           <input
             value={query}
@@ -64,18 +64,22 @@ export default function App() {
             }}
             placeholder="Search"
             className="border border-black p-2 rounded-xl w-full "
+            onKeyDown={(e) => {
+              if (e.key === "Enter") makeSearch();
+            }}
           />
           <Button disabled={isLoading} onClick={makeSearch} />
         </div>
         <div className="flex relative  flex-col justify-center items-center mt-4 text-white">
-          <span className="text-xs text-red-500">{error?.message}</span>
-
-          <div className="h-3 bg-red-100 relative">
-            {isLoading && (
+  
+          <div className="h-4 mb-2 flex justify-center items-center text-center  relative">
+            {isLoading ? (
               <p className="absolute animate-spin">
                 <PiSpinner size={20} />
               </p>
-            )}
+            ) : error?.message && <span className="text-xs  w-40  text-red-500 absolute right-50">
+            {error?.message}
+          </span>}
           </div>
 
           {currentData ? (
